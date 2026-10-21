@@ -1,0 +1,23 @@
+# Compilados y empaquetados
+target/
+*.class
+*.war
+*.jar
+
+# Logs generados por Logback
+logs/
+*.log
+
+# Configuracion local y secretos (nunca subir credenciales)
+.env
+*.local.properties
+
+# IDE
+nbproject/private/
+nbactions.xml
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
