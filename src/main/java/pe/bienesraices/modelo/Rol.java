@@ -1,9 +1,5 @@
 package pe.bienesraices.modelo;
 
-/**
- * Perfiles contemplados en RF001. Los cuatro ultimos son usuarios internos
- * que inician sesion en el portal.
- */
 public enum Rol {
     CLIENTE("Cliente", false),
     PROPIETARIO("Propietario", false),

@@ -7,13 +7,7 @@ import pe.bienesraices.dao.FabricaConexion;
 import pe.bienesraices.dao.impl.UsuarioDAOImpl;
 import pe.bienesraices.servicio.AuthService;
 
-/**
- * Contenedor simple de servicios: arma las dependencias una sola vez al
- * iniciar la aplicacion y los controladores las obtienen del ServletContext.
- * En esta etapa solo se publica el servicio de autenticacion.
- */
 public final class Servicios {
-
     private static final String ATRIBUTO = Servicios.class.getName();
 
     private final AuthService auth;

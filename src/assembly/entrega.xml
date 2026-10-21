@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Proyecto comprimido de entrega: mvn package genera target/inmobiliaria-<version>-entrega.zip -->
+
 <assembly xmlns="http://maven.apache.org/ASSEMBLY/2.2.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.2.0 https://maven.apache.org/xsd/assembly-2.2.0.xsd">
@@ -27,7 +27,7 @@
             <directory>src/main/resources/db</directory>
             <outputDirectory>sql</outputDirectory>
         </fileSet>
-        <!-- Codigo fuente sin archivos compilados, logs ni configuraciones locales -->
+
         <fileSet>
             <directory>.</directory>
             <outputDirectory>codigo-fuente</outputDirectory>

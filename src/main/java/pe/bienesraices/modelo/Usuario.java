@@ -2,9 +2,7 @@ package pe.bienesraices.modelo;
 
 import java.time.LocalDateTime;
 
-/** Usuario interno del sistema (RF001). */
 public class Usuario {
-
     private int idUsuario;
     private String username;
     private String passwordHash;

@@ -14,21 +14,11 @@ import com.google.common.collect.Sets;
 import pe.bienesraices.modelo.ModuloSistema;
 import pe.bienesraices.modelo.Rol;
 
-/**
- * Matriz de autorizacion por rol (RNF003). Se aplica en el filtro de
- * autenticacion a todas las rutas /app/*.
- *
- * <p>Las colecciones son inmutables (Google Guava): una vez cargada la matriz
- * ningun codigo puede agregar permisos en tiempo de ejecucion.</p>
- */
 public final class Permisos {
-
-    /** Ruta protegida -&gt; roles que pueden ingresar. En esta entrega solo existe el panel. */
     private static final ImmutableSetMultimap<String, Rol> RUTAS = ImmutableSetMultimap.<String, Rol>builder()
             .putAll("/app/panel", AGENTE, GERENTE, ASISTENTE, ADMINISTRADOR)
             .build();
 
-    /** Modulos del portal segun el caso de estudio; se iran activando en cada avance. */
     private static final ImmutableList<ModuloSistema> MODULOS = ImmutableList.of(
             new ModuloSistema("inmuebles", "Inmuebles", "Registrar, modificar, consultar y dar de baja inmuebles; historial de estados.",
                     "RF002, RF007, RF009", Sets.immutableEnumSet(AGENTE, GERENTE, ASISTENTE, ADMINISTRADOR), false),
@@ -46,18 +36,10 @@ public final class Permisos {
     private Permisos() {
     }
 
-    /**
-     * Denegar por defecto: una ruta /app/* no registrada no es accesible.
-     *
-     * @param rol  rol del usuario autenticado
-     * @param ruta ruta del servlet solicitado, por ejemplo {@code /app/panel}
-     * @return {@code true} si el rol tiene acceso a la ruta
-     */
     public static boolean puedeAcceder(Rol rol, String ruta) {
         return RUTAS.containsEntry(ruta, rol);
     }
 
-    /** @return modulos planificados del portal, en el orden de las pestanas del dashboard */
     public static List<ModuloSistema> modulos() {
         return MODULOS;
     }

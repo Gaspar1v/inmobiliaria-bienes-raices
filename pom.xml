@@ -17,7 +17,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <!-- Versiones de las librerias Java -->
         <guava.version>33.4.8-jre</guava.version>
         <commons-lang3.version>3.18.0</commons-lang3.version>
         <commons-codec.version>1.18.0</commons-codec.version>
@@ -29,7 +28,7 @@
     </properties>
 
     <dependencies>
-        <!-- API Jakarta EE 10 (la provee el servidor: GlassFish 7 / Tomcat 10.1 / Jetty 12) -->
+
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -47,27 +46,24 @@
             <version>3.0.1</version>
         </dependency>
 
-        <!-- Base de datos: JDBC puro con MySQL -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>${mysql.version}</version>
         </dependency>
-        <!-- H2 en modo MySQL: solo para demo local y pruebas unitarias -->
+
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>${h2.version}</version>
         </dependency>
 
-        <!-- Google Guava: precondiciones, colecciones inmutables, cache y medicion de tiempos -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
         </dependency>
 
-        <!-- Apache Commons: utilidades de texto y codificacion -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -79,7 +75,6 @@
             <version>${commons-codec.version}</version>
         </dependency>
 
-        <!-- Logback (implementacion de SLF4J): logs de aplicacion y auditoria -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -91,7 +86,6 @@
             <version>${logback.version}</version>
         </dependency>
 
-        <!-- Pruebas -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -119,7 +113,6 @@
                 <version>3.4.0</version>
             </plugin>
 
-            <!-- Documentacion para desarrolladores: mvn javadoc:javadoc -> target/reports/apidocs -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -133,7 +126,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Proyecto comprimido de entrega: WAR + scripts SQL + README en un .zip -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -155,7 +147,6 @@
                 </executions>
             </plugin>
 
-            <!-- Ejecucion rapida sin instalar servidor: mvn jetty:run -->
             <plugin>
                 <groupId>org.eclipse.jetty.ee10</groupId>
                 <artifactId>jetty-ee10-maven-plugin</artifactId>

@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 class PasswordHasherTest {
-
     @Test
     void verificaLaContrasenaCorrecta() {
         String hash = PasswordHasher.hash("Clave#2026".toCharArray());

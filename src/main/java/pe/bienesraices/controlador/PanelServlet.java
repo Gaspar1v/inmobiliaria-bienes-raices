@@ -11,13 +11,8 @@ import pe.bienesraices.modelo.ModuloSistema;
 import pe.bienesraices.modelo.UsuarioSesion;
 import pe.bienesraices.seguridad.Permisos;
 
-/**
- * Dashboard principal despues del inicio de sesion. Muestra la pestana Inicio
- * con los datos del usuario y las pestanas de los modulos planificados.
- */
 @WebServlet("/app/panel")
 public class PanelServlet extends BaseServlet {
-
     private static final long serialVersionUID = 1L;
 
     @Override

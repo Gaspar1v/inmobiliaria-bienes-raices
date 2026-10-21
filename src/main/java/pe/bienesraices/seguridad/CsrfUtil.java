@@ -8,9 +8,7 @@ import org.apache.commons.codec.binary.Base64;
 
 import jakarta.servlet.http.HttpSession;
 
-/** Token anti-CSRF por sesion que cada formulario POST debe reenviar. */
 public final class CsrfUtil {
-
     public static final String ATRIBUTO = "csrfToken";
     public static final String PARAMETRO = "_csrf";
     private static final SecureRandom ALEATORIO = new SecureRandom();

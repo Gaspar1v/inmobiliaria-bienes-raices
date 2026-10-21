@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.junit.jupiter.api.Test;
 
 class AuditoriaTest {
-
     @Test
     void enmascaraDatosPersonalesEnLogs() {
         assertEquals("****8912", Auditoria.enmascarar("45678912"));

@@ -8,14 +8,7 @@ import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
 
-/**
- * Lee la configuracion de {@code config.properties} y permite reemplazar cada
- * clave con una variable de entorno. Asi las credenciales reales de la base de
- * datos nunca se guardan en el repositorio: {@code db.password} se toma de
- * {@code BR_DB_PASSWORD}.
- */
 public final class Configuracion {
-
     private static final Configuracion INSTANCIA = new Configuracion();
 
     private final Properties propiedades = new Properties();
@@ -34,7 +27,6 @@ public final class Configuracion {
         return INSTANCIA;
     }
 
-    /** Prioridad: variable de entorno, propiedad del sistema y por ultimo el archivo. */
     public String valor(String clave) {
         String variable = "BR_" + clave.replace('.', '_').toUpperCase(Locale.ROOT);
         String desdeEntorno = System.getenv(variable);

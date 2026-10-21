@@ -9,7 +9,6 @@
     <request-character-encoding>UTF-8</request-character-encoding>
     <response-character-encoding>UTF-8</response-character-encoding>
 
-    <!-- Filtros en el orden en que se aplican -->
     <filter>
         <filter-name>cabeceras</filter-name>
         <filter-class>pe.bienesraices.filtro.CabecerasSeguridadFiltro</filter-class>
@@ -46,12 +45,11 @@
         <url-pattern>/app/*</url-pattern>
     </filter-mapping>
 
-    <!-- Sesion: 30 minutos, cookie inaccesible desde JavaScript y sin ID en la URL -->
     <session-config>
         <session-timeout>30</session-timeout>
         <cookie-config>
             <http-only>true</http-only>
-            <!-- En produccion con HTTPS cambiar a true -->
+
             <secure>false</secure>
             <attribute>
                 <attribute-name>SameSite</attribute-name>
@@ -61,7 +59,6 @@
         <tracking-mode>COOKIE</tracking-mode>
     </session-config>
 
-    <!-- Todas las vistas JSP se leen en UTF-8 -->
     <jsp-config>
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>
@@ -75,7 +72,6 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
-    <!-- Paginas de error propias: nunca se muestra la traza de la excepcion al usuario -->
     <error-page>
         <error-code>403</error-code>
         <location>/WEB-INF/vistas/error.jsp</location>

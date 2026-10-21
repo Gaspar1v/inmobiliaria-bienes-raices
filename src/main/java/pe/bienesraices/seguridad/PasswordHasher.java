@@ -12,15 +12,7 @@ import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.lang3.StringUtils;
 
-/**
- * Hash de contrasenas con PBKDF2-HMAC-SHA256 (incluido en el JDK), sal
- * aleatoria por usuario y 210 000 iteraciones (recomendacion OWASP).
- * Apache Commons Codec se usa para codificar los bytes en hexadecimal.
- *
- * <p>Formato almacenado: {@code pbkdf2$iteraciones$salHex$hashHex}</p>
- */
 public final class PasswordHasher {
-
     private static final String ALGORITMO = "PBKDF2WithHmacSHA256";
     private static final int ITERACIONES = 210_000;
     private static final int BYTES_SAL = 16;
@@ -47,7 +39,7 @@ public final class PasswordHasher {
             byte[] sal = Hex.decodeHex(partes[2]);
             byte[] esperado = Hex.decodeHex(partes[3]);
             byte[] calculado = derivar(password, sal, iteraciones);
-            // Comparacion en tiempo constante para no filtrar informacion por tiempos de respuesta
+
             return MessageDigest.isEqual(esperado, calculado);
         } catch (NumberFormatException | DecoderException e) {
             return false;
@@ -63,7 +55,6 @@ public final class PasswordHasher {
         }
     }
 
-    /** Utilidad para generar hashes de los usuarios de prueba: java PasswordHasher clave */
     public static void main(String[] args) {
         for (String clave : args) {
             System.out.println(hash(clave.toCharArray()));

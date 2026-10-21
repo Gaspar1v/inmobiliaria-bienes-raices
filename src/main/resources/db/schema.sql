@@ -1,8 +1,3 @@
--- =====================================================================
--- Portal Web Inmobiliaria Bienes Raices S.A.C. - Esquema de base de datos
--- Compatible con MySQL 8 y con H2 (modo MySQL) para pruebas.
--- =====================================================================
-
 CREATE TABLE IF NOT EXISTS usuario (
     id_usuario        INT AUTO_INCREMENT PRIMARY KEY,
     username          VARCHAR(50)  NOT NULL UNIQUE,

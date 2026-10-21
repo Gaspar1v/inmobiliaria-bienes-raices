@@ -12,9 +12,7 @@ import pe.bienesraices.modelo.UsuarioSesion;
 import pe.bienesraices.seguridad.Permisos;
 import pe.bienesraices.util.Auditoria;
 
-/** Autenticacion y autorizacion por rol para todas las rutas /app/* (RF001, RNF003). */
 public class AutenticacionFiltro extends HttpFilter {
-
     private static final long serialVersionUID = 1L;
 
     @Override

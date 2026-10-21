@@ -11,7 +11,6 @@ import pe.bienesraices.modelo.ModuloSistema;
 import pe.bienesraices.modelo.Rol;
 
 class PermisosTest {
-
     @Test
     void todosLosRolesInternosEntranAlPanel() {
         for (Rol rol : Rol.values()) {

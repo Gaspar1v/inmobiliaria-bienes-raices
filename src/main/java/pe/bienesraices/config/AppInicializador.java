@@ -10,16 +10,14 @@ import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
 import pe.bienesraices.dao.Conexion;
 
-/** Arranque de la aplicacion: prepara la base de datos de demostracion y los servicios. */
 @WebListener
 public class AppInicializador implements ServletContextListener {
-
     private static final Logger LOG = LoggerFactory.getLogger(AppInicializador.class);
 
     @Override
     public void contextInitialized(ServletContextEvent evento) {
         Conexion conexion = Conexion.get();
-        // Nunca se registra la URL completa: podria contener credenciales
+
         LOG.info("Iniciando Portal Bienes Raices con base de datos {}", conexion.getUrl().split(";")[0]);
         if (Configuracion.get().activado("db.inicializar")) {
             try (Connection cn = conexion.obtener()) {

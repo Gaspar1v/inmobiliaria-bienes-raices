@@ -16,7 +16,6 @@ import pe.bienesraices.modelo.Rol;
 import pe.bienesraices.modelo.Usuario;
 
 public class UsuarioDAOImpl implements UsuarioDAO {
-
     private static final String SQL_BUSCAR =
             "SELECT id_usuario, username, password_hash, nombres, rol, activo, intentos_fallidos, bloqueado_hasta "
             + "FROM usuario WHERE username = ?";

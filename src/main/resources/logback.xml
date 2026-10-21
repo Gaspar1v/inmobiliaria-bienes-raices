@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    Configuracion de Logback.
-    - CONSOLA: salida del servidor durante el desarrollo.
-    - ARCHIVO: log de la aplicacion con rotacion diaria y por tamano.
-    - AUDITORIA: bitacora separada de acciones de usuarios (RNF007).
-    El directorio se cambia con la propiedad del sistema -DLOG_DIR=/ruta
--->
+
 <configuration scan="true" scanPeriod="60 seconds">
 
     <property name="LOG_DIR" value="${LOG_DIR:-logs}" />
@@ -45,7 +39,6 @@
         </encoder>
     </appender>
 
-    <!-- Escritura asincrona: el registro de logs no retrasa las respuestas al usuario -->
     <appender name="ASYNC_ARCHIVO" class="ch.qos.logback.classic.AsyncAppender">
         <appender-ref ref="ARCHIVO" />
     </appender>
@@ -56,7 +49,7 @@
     </logger>
 
     <logger name="pe.bienesraices" level="DEBUG" />
-    <!-- Librerias de terceros: solo advertencias para no llenar los logs -->
+
     <logger name="com.mysql" level="WARN" />
 
     <root level="INFO">

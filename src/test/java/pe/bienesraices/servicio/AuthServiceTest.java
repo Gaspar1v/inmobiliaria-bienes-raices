@@ -15,7 +15,6 @@ import pe.bienesraices.dao.impl.UsuarioDAOImpl;
 import pe.bienesraices.modelo.Rol;
 
 class AuthServiceTest {
-
     private AuthService servicio;
 
     @BeforeEach
@@ -45,7 +44,6 @@ class AuthServiceTest {
         AuthService.Resultado quinto = servicio.autenticar("agente", "incorrecta".toCharArray());
         assertEquals(AuthService.Estado.CUENTA_BLOQUEADA, quinto.estado());
 
-        // Aun con la clave correcta, la cuenta sigue bloqueada
         AuthService.Resultado correcto = servicio.autenticar("agente", "Agente#2026".toCharArray());
         assertEquals(AuthService.Estado.CUENTA_BLOQUEADA, correcto.estado());
         assertNull(correcto.usuario());

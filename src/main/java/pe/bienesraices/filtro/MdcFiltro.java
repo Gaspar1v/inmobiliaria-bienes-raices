@@ -12,12 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import pe.bienesraices.modelo.UsuarioSesion;
 
-/**
- * Coloca el usuario y la IP en el MDC de Logback durante cada peticion, para
- * que cada linea de log indique quien realizo la accion (RNF007).
- */
 public class MdcFiltro extends HttpFilter {
-
     private static final long serialVersionUID = 1L;
 
     @Override

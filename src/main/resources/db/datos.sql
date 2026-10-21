@@ -1,9 +1,3 @@
--- =====================================================================
--- Datos de prueba (solo para demostracion).
--- Contrasenas de prueba: ver README.md. Cambiarlas antes de produccion.
--- Los hashes PBKDF2 se generan con: java pe.bienesraices.seguridad.PasswordHasher <clave>
--- =====================================================================
-
 INSERT INTO usuario (username, password_hash, nombres, rol, activo) VALUES
 ('admin',     'pbkdf2$210000$1ff33229ece10c33cededc2e08cae952$514cb128e3319518e697ec06ff4e391f2f813bbd2020487c92fa118298da4b5e', 'Administrador del sistema', 'ADMINISTRADOR', TRUE),
 ('gerente',   'pbkdf2$210000$3161222df9e977e18a4aba73cc862f4f$63f180b6492d639dab80a27195f6adfa0dde01ed06fe19803728af9e11f6ddc6', 'Rosa Medina Paredes',       'GERENTE',       TRUE),

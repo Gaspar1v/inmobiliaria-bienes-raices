@@ -13,13 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import pe.bienesraices.seguridad.CsrfUtil;
 import pe.bienesraices.util.Auditoria;
 
-/**
- * Proteccion contra Cross-Site Request Forgery: todo POST debe incluir el
- * token de la sesion. Para GET se genera el token y se publica en la peticion
- * para que las vistas lo inserten en sus formularios.
- */
 public class CsrfFiltro extends HttpFilter {
-
     private static final long serialVersionUID = 1L;
     private static final Logger LOG = LoggerFactory.getLogger(CsrfFiltro.class);
 

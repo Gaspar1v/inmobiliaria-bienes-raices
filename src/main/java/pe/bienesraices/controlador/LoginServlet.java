@@ -12,10 +12,8 @@ import jakarta.servlet.http.HttpSession;
 import pe.bienesraices.servicio.AuthService;
 import pe.bienesraices.util.Auditoria;
 
-/** Caso de uso IniciarSesion (RF001). */
 @WebServlet("/login")
 public class LoginServlet extends BaseServlet {
-
     private static final long serialVersionUID = 1L;
 
     @Override
@@ -36,7 +34,6 @@ public class LoginServlet extends BaseServlet {
         AuthService.Resultado r = servicios().auth().autenticar(username, password.toCharArray());
         switch (r.estado()) {
             case EXITOSO -> {
-                // Se cambia el ID de sesion para evitar la fijacion de sesion
                 req.changeSessionId();
                 HttpSession sesion = req.getSession();
                 sesion.setAttribute("usuario", r.usuario());
@@ -50,7 +47,6 @@ public class LoginServlet extends BaseServlet {
                 vista("login", req, res);
             }
             default -> {
-                // Mensaje generico: no revela si el usuario existe
                 req.setAttribute("error", "Usuario o contrasena incorrectos.");
                 req.setAttribute("username", Auditoria.limpiar(username));
                 vista("login", req, res);

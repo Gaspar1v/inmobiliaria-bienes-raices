@@ -2,12 +2,7 @@ package pe.bienesraices.modelo;
 
 import java.io.Serializable;
 
-/**
- * Datos minimos del usuario que se guardan en la sesion HTTP.
- * Nunca se guarda el hash de la contrasena en la sesion.
- */
 public class UsuarioSesion implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
     private final int idUsuario;

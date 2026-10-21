@@ -6,9 +6,7 @@ import java.sql.SQLException;
 
 import pe.bienesraices.config.Configuracion;
 
-/** Fabrica de conexiones por defecto, configurada con config.properties o variables BR_DB_*. */
 public final class Conexion implements FabricaConexion {
-
     private static final Conexion INSTANCIA = new Conexion();
 
     private final String url;

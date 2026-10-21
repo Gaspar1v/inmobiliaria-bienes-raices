@@ -9,9 +9,7 @@ import java.sql.Statement;
 
 import org.apache.commons.lang3.StringUtils;
 
-/** Ejecuta un script .sql del classpath (sentencias separadas por punto y coma). */
 public final class ScriptSQL {
-
     private ScriptSQL() {
     }
 

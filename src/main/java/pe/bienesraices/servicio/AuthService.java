@@ -14,17 +14,10 @@ import pe.bienesraices.modelo.UsuarioSesion;
 import pe.bienesraices.seguridad.PasswordHasher;
 import pe.bienesraices.util.Auditoria;
 
-/**
- * Casos de uso IniciarSesion y ValidarCredencialesYPermisos (RF001, RNF003).
- * Bloquea la cuenta 15 minutos despues de 5 intentos fallidos para frenar
- * ataques de fuerza bruta.
- */
 public class AuthService {
-
     public static final int MAX_INTENTOS = 5;
     public static final int MINUTOS_BLOQUEO = 15;
 
-    /** Hash ficticio para que un usuario inexistente tarde lo mismo que uno real. */
     private static final String HASH_FICTICIO = PasswordHasher.hash("no-usar".toCharArray());
 
     private static final Logger LOG = LoggerFactory.getLogger(AuthService.class);
@@ -73,7 +66,6 @@ public class AuthService {
             return new Resultado(Estado.EXITOSO,
                     new UsuarioSesion(u.getIdUsuario(), u.getUsername(), u.getNombres(), u.getRol()));
         } finally {
-            // La contrasena en claro no debe quedar en memoria mas de lo necesario
             Arrays.fill(password, '\0');
         }
     }

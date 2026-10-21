@@ -10,10 +10,8 @@ import pe.bienesraices.util.Auditoria;
 
 @WebServlet("/logout")
 public class LogoutServlet extends BaseServlet {
-
     private static final long serialVersionUID = 1L;
 
-    /** Solo POST (con token CSRF): un enlace externo no puede cerrar la sesion del usuario. */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
         HttpSession sesion = req.getSession(false);

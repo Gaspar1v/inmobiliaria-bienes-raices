@@ -7,9 +7,7 @@ import java.util.UUID;
 import pe.bienesraices.config.ScriptSQL;
 import pe.bienesraices.dao.FabricaConexion;
 
-/** Crea una base H2 en memoria, aislada por prueba, con el mismo esquema que MySQL. */
 public final class BaseDatosPrueba {
-
     private BaseDatosPrueba() {
     }
 

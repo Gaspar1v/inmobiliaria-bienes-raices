@@ -6,7 +6,6 @@ import java.util.Optional;
 import pe.bienesraices.modelo.Usuario;
 
 public interface UsuarioDAO {
-
     Optional<Usuario> buscarPorUsername(String username);
 
     void registrarIntentoFallido(int idUsuario, int intentos, LocalDateTime bloqueadoHasta);
